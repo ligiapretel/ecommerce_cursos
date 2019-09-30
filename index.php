@@ -1,5 +1,6 @@
 <?php
     $nomeSistema = "Cursos Braseeel";
+    $usuario = ["nome"=>"Ligia"];
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +21,16 @@
         <!-- <img src="images/logo.png" alt="Logo"/> -->
         <nav>
             <ul>
-                <a href="#"><li>Cursos</li></a>
-                <a href="#"><li>Login</li></a>
-                <a href="#"><li>Cadastro</li></a>
+                <!-- verificando se a variável usuário existe e se é diferente de vazia -->
+                <?php
+                    if(isset($usuario) && $usuario != []){
+                ?>
+                    <a href="#"><li>Cursos</li></a>
+                    <a href="#"><li>Olá, <?php echo $usuario["nome"]; ?></li></a>
+                <?php }else{ ?>
+                    <a href="#"><li>Login</li></a>
+                    <a href="#"><li>Cadastro</li></a>
+                <?php } ?>
             </ul>
         </nav>
     </header>
