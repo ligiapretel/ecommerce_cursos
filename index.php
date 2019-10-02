@@ -1,6 +1,15 @@
 <?php
     $nomeSistema = "Cursos Braseeel";
     $usuario = ["nome"=>"Ligia"];
+
+    $produtos = [
+        ["nome"=>"Planejamento estratégico","preco"=>"R$ 2.900,00","duracao"=>"2 meses"],
+        ["nome"=>"Matemática Interespacial","preco"=>"R$ 1.900,00","duracao"=>"3 meses"],
+    ];
+
+    $categorias = [
+        "Cursos","Palestras","Books"
+    ];
 ?>
 
 <!DOCTYPE html>
@@ -35,19 +44,47 @@
         </nav>
     </header>
     <main>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="navbar-nav">
+            <!-- Verificando se existe a variável categoria e se ela não está vazia. -->
+            <?php if(isset($categorias) && $categorias != []){?>
+
+                <?php 
+                    foreach ($categorias as $categoria){?>   
+                <a class="nav-link" href="#"><li class="nav-item active"><?php echo $categoria;?></li></a>
+                    <?php }?>
+            <!-- Fechando php que checa se a variável existe. -->
+            <?php } ?>            
+            </ul>            
+        </nav>
         <section class="container mt-4">
             <div class="row justify-content-around">
-                <div class="col-lg-3-card card text-center">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Planejamento Estratégico</h5>
-                            <img src="images/curso01.svg" class="card-img-top" alt="...">
-                            <h5>R$ 99,00</h5>
-                            <a href="#" class="btn btn-primary">Comprar</a>
-                        </div>
-                    </div>   
-                </div>
-                <div class="col-lg-3-card card text-center">
+            <?php if(isset($produtos) && $produtos != []){?>
+                <?php 
+                    foreach($produtos as $produto){
+
+                    
+                ?>
+                    <div class="col-lg-3-card card text-center">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $produto["nome"]; ?></h5>
+                                <img src="images/curso01.svg" class="card-img-top" alt="...">
+                                <h5><?php echo $produto["preco"]; ?></h5>
+                                <a href="#" class="btn btn-primary">Comprar</a>
+                            </div>
+                        </div>   
+                    </div>
+                <!-- Fechando foreach -->
+                <?php } ?>
+            <!-- Fechando if(isset) -->
+            <?php } else { ?>
+                <h2>Ops! Não temos cursos disponíveis no momento.</h2>
+            <?php } ?>
+                
+                <!-- Faremos os outros cards usando php, e não mais manualmente como código abaixo     -->
+                <!-- <div class="col-lg-3-card card text-center">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Matemática Interespacial</h5>
@@ -66,7 +103,9 @@
                             <a href="#" class="btn btn-primary">Comprar</a>
                         </div>
                     </div>   
-                </div>
+                </div> -->
+
+
             </div>
         </section>
     </main>    
@@ -126,6 +165,7 @@
         // elseif($idade == 16 || $idade == 17){
         //     echo "Voto opcional";
         // }
+
     ?>
 </body>
 </html>
