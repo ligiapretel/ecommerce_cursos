@@ -3,8 +3,8 @@
     $usuario = ["nome"=>"Ligia"];
 
     $produtos = [
-        ["nome"=>"Planejamento estratégico","preco"=>"R$ 2.900,00","duracao"=>"2 meses"],
-        ["nome"=>"Matemática Interespacial","preco"=>"R$ 1.900,00","duracao"=>"3 meses"],
+        ["nome"=>"Planejamento estratégico","preco"=>"R$ 2.900,00","duracao"=>"2 meses","img"=>"images/curso01.svg"],
+        ["nome"=>"Matemática Interespacial","preco"=>"R$ 1.900,00","duracao"=>"3 meses","img"=>"images/curso02.svg"],
     ];
 
     $categorias = [
@@ -34,7 +34,7 @@
                 <?php
                     if(isset($usuario) && $usuario != []){
                 ?>
-                    <a href="#"><li>Cursos</li></a>
+                    <a href="index.php"><li>Cursos</li></a>
                     <a href="#"><li>Olá, <?php echo $usuario["nome"]; ?></li></a>
                 <?php }else{ ?>
                     <a href="#"><li>Login</li></a>
@@ -70,9 +70,9 @@
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $produto["nome"]; ?></h5>
-                                <img src="images/curso01.svg" class="card-img-top" alt="...">
+                                <img src="<?php echo $produto["img"]; ?>" class="card-img-top" alt="Imagem curso">
                                 <h5><?php echo $produto["preco"]; ?></h5>
-                                <a href="#" class="btn btn-primary">Comprar</a>
+                                <a href="carrinho.php?nomeProduto=<?php echo $produto["nome"];?>" class="btn btn-primary">Comprar</a>
                             </div>
                         </div>   
                     </div>
