@@ -1,10 +1,6 @@
+<!-- Inclui variáveis no header, então não preciso mais chamar o arquivo variáveis.php nas páginas em que tiver incluido o header. -->
 <?php
-    $nomeSistema = "Cursos Braseeel";
-    $usuario = ["nome"=>"Ligia"];
-
-    $categorias = [
-        "Cursos","Palestras","Books"
-    ];
+    // include_once("config/variaveis.php");
 ?>
 
 <!DOCTYPE html>
@@ -18,40 +14,11 @@
     <title>E-commerce Cursos</title>
 </head>
 <body>
-    <header>
-        <h1 id="logo">
-            <?php echo $nomeSistema; ?>
-        </h1>
-        <!-- <img src="images/logo.png" alt="Logo"/> -->
-        <nav>
-            <ul>
-                <!-- verificando se a variável usuário existe e se é diferente de vazia -->
-                <?php
-                    if(isset($usuario) && $usuario != []){
-                ?>
-                    <a href="index.php"><li>Cursos</li></a>
-                    <a href="#"><li>Olá, <?php echo $usuario["nome"]; ?></li></a>
-                <?php }else{ ?>
-                    <a href="#"><li>Login</li></a>
-                    <a href="#"><li>Cadastro</li></a>
-                <?php } ?>
-            </ul>
-        </nav>
-    </header>
+    <?php
+        include_once("header.php");
+    ?>
     <main>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <ul class="navbar-nav">
-            <!-- Verificando se existe a variável categoria e se ela não está vazia. -->
-            <?php if(isset($categorias) && $categorias != []){?>
 
-                <?php 
-                    foreach ($categorias as $categoria){?>   
-                <a class="nav-link" href="#"><li class="nav-item active"><?php echo $categoria;?></li></a>
-                    <?php }?>
-            <!-- Fechando php que checa se a variável existe. -->
-            <?php } ?>            
-            </ul>            
-        </nav>
         <section class="container">
             <div class="row">
                 <div class="col-12">
