@@ -1,6 +1,10 @@
 <?php
+    session_start();
+
     $nomeSistema = "Cursos Braseeel";
-    $usuario = ["nome"=>"Ligia"];
+    // verificar se o usuario logou
+    $usuario = isset($_SESSION["usuario"])? $_SESSION["usuario"]:[];
+    // $usuario = ["nome"=>"Ligia"];
 
     // $produtos = [
     //     ["nome"=>"Planejamento estratégico","preco"=>"R$ 2.900,00","duracao"=>"2 meses","img"=>"images/curso01.svg"],

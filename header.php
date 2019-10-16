@@ -16,7 +16,7 @@
                     <a href="index.php"><li>Cursos</li></a>
                     <a href="#"><li>Olá, <?php echo $usuario["nome"]; ?></li></a>
                 <?php }else{ ?>
-                    <a href="#"><li>Login</li></a>
+                    <a href="login.php"><li>Login</li></a>
                     <a href="#"><li>Cadastro</li></a>
                 <?php } ?>
             </ul>

@@ -78,6 +78,22 @@
     </form>
 </body>
 </html> -->
+<?php
+// Aula PHP - Login
+
+$senha = 123;
+// password_hash();
+$senhaC = password_hash($senha, PASSWORD_DEFAULT);
+var_dump($senhaC);
+
+if(password_verify($senha,$senhaC)){
+    echo "igual";
+}else{
+    echo "diferente";
+}
+    
+
+?>
 
 <?php
 echo "<pre>";
