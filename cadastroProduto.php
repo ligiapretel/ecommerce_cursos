@@ -45,11 +45,13 @@ function cadastrarProduto($nomeProduto,$descricaoProduto,$imgProduto,$precoProdu
 }
 //verificando se tem algo sendo enviado via post
 if($_POST){
-    // Salvando arquivo - dentro do files tem que ter o name que vai no input do form, e depois o dado específico que quero pegar dentro desse array.
+    // Salvando arquivo - dentro do files tem que ter o name que vai no input do form, e depois o dado específico que quero pegar dentro desse array (para visualizar esse dado, damos var_dump na $_FILES).
     $nomeImagem = $_FILES["imgProduto"]["name"];
     $localTempImagem = $_FILES["imgProduto"]["tmp_name"];
+    //pegando a data atual para concatenar ao nome da imagem
+    $dataAtual = date("d-m-y");
     // Onde eu quero que esse arquivo seja salvo:
-    $caminhoImagem = "images/".$nomeImagem;
+    $caminhoImagem = "images/".$dataAtual.$nomeImagem;
 
     $tudoOk = move_uploaded_file($localTempImagem,$caminhoImagem);
     // exit;

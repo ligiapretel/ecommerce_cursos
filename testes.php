@@ -42,21 +42,21 @@
 
 // echo soma(1,1);
 
-$a = 10;
-$b = 15;
+// $a = 10;
+// $b = 15;
 
-function soma(){
-    global $a, $b;
-    $a = $a + 1;
-    return $a + $b;
-}
-soma();
-soma();
-echo soma()."<br>";
+// function soma(){
+//     global $a, $b;
+//     $a = $a + 1;
+//     return $a + $b;
+// }
+// soma();
+// soma();
+// echo soma()."<br>";
 
-echo $a;
+// echo $a;
 
-?>
+// ?>
 
 
 <!-- <!DOCTYPE html>
@@ -78,3 +78,25 @@ echo $a;
     </form>
 </body>
 </html> -->
+
+<?php
+echo "<pre>";
+$ceu = [
+        "Argentina" => ["Buenos Aires", "Córdoba", "Santa Fé"],
+        "Brasil" => ["Brasília", "Rio de Janeiro", "São Paulo"],
+        "Colômbia" => ["Cartagena", "Bogotá", "Barranquilla"],
+        "França" => ["Paris", "Nantes", "Lyon"],
+        "Itália" => ["Roma", "Milão", "Veneza"],
+        "Alemanha" => ["Munique", "Berlim", "Frankfurt"]
+        ];
+        foreach($ceu as $pais=>$cidades){
+            if($pais=="Argentina" || $pais=="Brasil" || $pais=="Colômbia"){
+               $ceu[$pais]=$cidades[]["naAmerica"] = "true";   
+                
+            }else{
+                 
+            }
+        }
+var_dump($ceu);
+
+?>

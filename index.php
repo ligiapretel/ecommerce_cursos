@@ -30,6 +30,7 @@
                     <div class="col-lg-3-card card text-center">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
+                            <!-- A etiqueta que chamo dentro de $produto é a mesma etiqueta do .json -->
                                 <h5 class="card-title"><?php echo $produto["nome"]; ?></h5>
                                 <img src="<?php echo $produto["img"]; ?>" class="card-img-top" alt="Imagem curso">
                                 <h5><?php echo $produto["preco"]; ?></h5>
