@@ -1,5 +1,5 @@
 <?php
-    include_once("variaveis.php");
+    include_once("config/variaveis.php");
 ?>
 
 <header>
@@ -15,6 +15,7 @@
                 ?>
                     <a href="index.php"><li>Cursos</li></a>
                     <a href="#"><li>Olá, <?php echo $usuario["nome"]; ?></li></a>
+                    <a href="logout.php"><li>Sair</li></a>
                 <?php }else{ ?>
                     <a href="login.php"><li>Login</li></a>
                     <a href="#"><li>Cadastro</li></a>

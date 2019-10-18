@@ -81,38 +81,38 @@
 <?php
 // Aula PHP - Login
 
-$senha = 123;
-// password_hash();
-$senhaC = password_hash($senha, PASSWORD_DEFAULT);
-var_dump($senhaC);
+// $senha = 123;
+// // password_hash();
+// $senhaC = password_hash($senha, PASSWORD_DEFAULT);
+// var_dump($senhaC);
 
-if(password_verify($senha,$senhaC)){
-    echo "igual";
-}else{
-    echo "diferente";
-}
+// if(password_verify($senha,$senhaC)){
+//     echo "igual";
+// }else{
+//     echo "diferente";
+// }
     
 
 ?>
 
 <?php
-echo "<pre>";
-$ceu = [
-        "Argentina" => ["Buenos Aires", "Córdoba", "Santa Fé"],
-        "Brasil" => ["Brasília", "Rio de Janeiro", "São Paulo"],
-        "Colômbia" => ["Cartagena", "Bogotá", "Barranquilla"],
-        "França" => ["Paris", "Nantes", "Lyon"],
-        "Itália" => ["Roma", "Milão", "Veneza"],
-        "Alemanha" => ["Munique", "Berlim", "Frankfurt"]
-        ];
-        foreach($ceu as $pais=>$cidades){
-            if($pais=="Argentina" || $pais=="Brasil" || $pais=="Colômbia"){
-               $ceu[$pais]=$cidades[]["naAmerica"] = "true";   
+// echo "<pre>";
+// $ceu = [
+//         "Argentina" => ["Buenos Aires", "Córdoba", "Santa Fé"],
+//         "Brasil" => ["Brasília", "Rio de Janeiro", "São Paulo"],
+//         "Colômbia" => ["Cartagena", "Bogotá", "Barranquilla"],
+//         "França" => ["Paris", "Nantes", "Lyon"],
+//         "Itália" => ["Roma", "Milão", "Veneza"],
+//         "Alemanha" => ["Munique", "Berlim", "Frankfurt"]
+//         ];
+//         foreach($ceu as $pais=>$cidades){
+//             if($pais=="Argentina" || $pais=="Brasil" || $pais=="Colômbia"){
+//                $ceu[$pais]=$cidades[]["naAmerica"] = "true";   
                 
-            }else{
+//             }else{
                  
-            }
-        }
-var_dump($ceu);
+//             }
+//         }
+// var_dump($ceu);
 
 ?>
